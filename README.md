@@ -1,39 +1,39 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Trạng thái Build"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Tổng số lượt tải"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Phiên bản ổn định mới nhất"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="Giấy phép"></a>
 </p>
 
-## About Laravel
+## Giới thiệu về Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Laravel là một framework ứng dụng web với cú pháp biểu cảm và tinh tế. Chúng tôi tin rằng quá trình phát triển phải là một trải nghiệm thú vị và sáng tạo để thực sự có ý nghĩa. Laravel giúp giảm bớt khó khăn trong phát triển bằng cách đơn giản hóa các tác vụ phổ biến trong nhiều dự án web, chẳng hạn như:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- [Động cơ định tuyến đơn giản, nhanh chóng](https://laravel.com/docs/routing).
+- [Container tiêm phụ thuộc mạnh mẽ](https://laravel.com/docs/container).
+- Hỗ trợ nhiều backend cho [lưu trữ phiên làm việc](https://laravel.com/docs/session) và [bộ nhớ cache](https://laravel.com/docs/cache).
+- [ORM cơ sở dữ liệu trực quan, mạnh mẽ](https://laravel.com/docs/eloquent).
+- [Di chuyển cơ sở dữ liệu độc lập](https://laravel.com/docs/migrations).
+- [Xử lý công việc nền mạnh mẽ](https://laravel.com/docs/queues).
+- [Phát sóng sự kiện thời gian thực](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Laravel dễ tiếp cận, mạnh mẽ và cung cấp các công cụ cần thiết cho các ứng dụng lớn, phức tạp.
 
-## Learning Laravel
+## Học Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Laravel có tài liệu [hướng dẫn](https://laravel.com/docs) và thư viện video chi tiết nhất trong tất cả các framework web hiện đại, giúp bạn dễ dàng bắt đầu.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Bạn cũng có thể thử [Laravel Bootcamp](https://bootcamp.laravel.com), nơi bạn sẽ được hướng dẫn xây dựng một ứng dụng Laravel hiện đại từ đầu.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Nếu bạn không thích đọc tài liệu, [Laracasts](https://laracasts.com) có thể giúp bạn. Laracasts chứa hàng nghìn video hướng dẫn về nhiều chủ đề khác nhau, bao gồm Laravel, PHP hiện đại, kiểm thử đơn vị và JavaScript. Nâng cao kỹ năng của bạn bằng cách khám phá thư viện video phong phú này.
 
-## Laravel Sponsors
+## Các nhà tài trợ Laravel
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Chúng tôi xin gửi lời cảm ơn đến các nhà tài trợ đã hỗ trợ phát triển Laravel. Nếu bạn quan tâm đến việc trở thành nhà tài trợ, vui lòng truy cập [Chương trình Đối tác Laravel](https://partners.laravel.com).
 
-### Premium Partners
+### Đối tác cao cấp
 
 - **[Vehikl](https://vehikl.com/)**
 - **[Tighten Co.](https://tighten.co)**
@@ -49,18 +49,18 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 - **[byte5](https://byte5.de)**
 - **[OP.GG](https://op.gg)**
 
-## Contributing
+## Đóng góp
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Cảm ơn bạn đã quan tâm đến việc đóng góp cho framework Laravel! Hướng dẫn đóng góp có thể được tìm thấy trong [tài liệu Laravel](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+## Quy tắc ứng xử
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Để đảm bảo cộng đồng Laravel luôn chào đón tất cả mọi người, vui lòng xem và tuân thủ [Quy tắc ứng xử](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+## Lỗ hổng bảo mật
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Nếu bạn phát hiện ra lỗ hổng bảo mật trong Laravel, vui lòng gửi email cho Taylor Otwell qua [taylor@laravel.com](mailto:taylor@laravel.com). Mọi lỗ hổng bảo mật sẽ được xử lý nhanh chóng.
 
-## License
+## Giấy phép
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Framework Laravel là phần mềm mã nguồn mở được cấp phép theo [Giấy phép MIT](https://opensource.org/licenses/MIT).
