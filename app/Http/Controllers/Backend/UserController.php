@@ -6,43 +6,27 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Services\Interfaces\UserServiceInterface as UserService;
-use App\Repositories\Interfaces\UserRepositoryInterface;
+use App\Repositories\Interfaces\ProvinceRepositoryInterface as ProvinceService;
 
 
 class UserController extends Controller
 {
     protected $userService;
+    protected $provinceRepository;
 
     public function __construct(
-         UserService $userService
-    ){
+        UserService $userService,
+        ProvinceService $provinceRepository,
+         ){
         $this->userService = $userService;
+        $this->provinceRepository = $provinceRepository;
     }
 
     public function index()
     {
         $users = $this->userService->paginate();
 
-        $config = $this->config();
-        $config['seo'] = config('apps.user');
-
-        $template = 'backend.user.index';
-        return view('backend.dashboard.layout', compact('template', 'config', 'users'));
-    }
-
-    public function create(){
-        $config['seo'] = config('apps.user');
-
-        $template = 'backend.user.create';
-        return view('backend.dashboard.layout', compact(
-            'template',
-            'config'
-        ));
-    }
-
-    private function config()
-    {
-        return [
+        $config = [
             'js' => [
                 'backend/js/plugins/switchery/switchery.js'
             ],
@@ -50,5 +34,40 @@ class UserController extends Controller
                 'backend/css/plugins/switchery/switchery.css'
             ]
         ];
+        $config['seo'] = config('apps.user');
+
+        $template = 'backend.user.index';
+        return view('backend.dashboard.layout', compact('template', 'config', 'users'));
     }
+
+    public function create(){
+
+
+        $provinces = $this->provinceRepository->all();
+
+        $config = [
+            'css' => [
+                'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css'
+            ],
+            'js' => [
+                'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js',
+                'backend/library/location.js'
+
+            ]
+        ];
+
+        $config['seo'] = config('apps.user');
+
+        $template = 'backend.user.create';
+        return view('backend.dashboard.layout', compact(
+            'template',
+            'config',
+            'provinces'
+        ));
+    }
+
+    public function store(Request $request){
+        echo 1;die();
+    }
+
 }
