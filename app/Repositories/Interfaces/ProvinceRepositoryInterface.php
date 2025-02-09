@@ -6,9 +6,8 @@ namespace App\Repositories\Interfaces;
  * Interface UserServiceInterface
  * @package App\Services\Interfaces
  */
-interface UserRepositoryInterface
+interface ProvinceRepositoryInterface
 {
-    
-    
-
+    public function all();
+    public function findById(int $id);
 }
