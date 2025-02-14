@@ -15,8 +15,10 @@ interface BaseRepositoryInterface
     public function delete(int $id = 0);
     public function pagination(
         array $column = ['*'],
-        array $condition = [], 
+        array $condition = [],
         array $join = [],
-        int $perpage = 20
+        array $extend = [],
+        int $perpage = 1
     );
+    public function updateByWhereIn(string $whereInField = '', array $whereIn = [], array $payload = []);
 }
