@@ -26,16 +26,21 @@ class BaseRepository implements BaseRepositoryInterface
 
     public function pagination(
         array $column = ['*'],
-        array $condition = [], 
+        array $condition = [],
         array $join = [],
-        int $perpage = 20
+        array $extend = [],
+        int $perPage = 1
+
         ){
-        $query = $this->model->select($column)
-                            ->where($condition);
+        $query = $this->model->select($column)->where(function($query)use ($condition){
+            if(isset($condition['keyword']) && !empty($condition['keyword'])){
+                $query->where('name', 'LIKE', '%'.$condition['keyword'].'%');
+            }
+        });
         if(!empty($join)){
             $query->join($join);
         }
-        return $query->paginate($perpage);
+        return $query->paginate($perPage)->withQueryString()->withPath(env('APP_URL').$extend['path']);
     }
 
     public function create(array $payload = []){
@@ -45,10 +50,12 @@ class BaseRepository implements BaseRepositoryInterface
 
     public function update(int $id = 0, array $payload = []){
         $model = $this->model->findById($id);
-
         return $model->update($payload);
     }
 
+    public function updateByWhereIn(string $whereInField = '', array $whereIn = [], array $payload = []){
+        return $this->model->whereIn($whereInField, $whereIn)->update($payload);
+    }
     public function delete(int $id = 0){
         return $this->findById($id)->delete();
     }

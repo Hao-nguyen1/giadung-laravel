@@ -16,11 +16,9 @@
     <tbody>        
         @if (isset($users) && is_object($users))
         @foreach ($users as $user)
-            
-
-    <tr>
+    <tr >
         <td>
-            <input type="checkbox" value="" class="input-checkbox checkBoxItem"/>
+            <input type="checkbox" value="{{$user->id}}" class="input-checkbox checkBoxItem"/>
         </td>
 
         <td>
@@ -35,10 +33,11 @@
         <td>
             <div class="address-item name">{{$user->address}}</div>
         </td>
-        <td class="text-center">
-            <input type="checkbox" value="{{$user->publish}}" class="js-switch" {{
+        <td class="text-center js-switch-{{$user->id}}">
+            <input type="checkbox" value="{{$user->publish}}" class="js-switch
+            status " data-field="publish" data-model="User" {{
                 ($user->publish == 1) ? 'checked' : ''
-            }} />
+            }} data-modelId="{{$user->id}}" />
         </td>
         <td class="text-center">
             <a href="{{route('user.edit',$user->id)}}" class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i></a>
