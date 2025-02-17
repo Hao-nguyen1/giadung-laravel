@@ -45,7 +45,7 @@ class UserController extends Controller
         ];
         $config['seo'] = config('apps.user');
 
-        $template = 'backend.user.index';
+        $template = 'backend.user.user.index';
         return view('backend.dashboard.layout', compact('template', 'config', 'users'));
     }
 
@@ -68,7 +68,7 @@ class UserController extends Controller
 
         $config['seo'] = config('apps.user');
         $config['method'] = 'create';
-        $template = 'backend.user.store';
+        $template = 'backend.user.user.store';
         return view('backend.dashboard.layout', compact(
             'template',
             'config',
@@ -101,7 +101,7 @@ class UserController extends Controller
 
         $config['seo'] = config('apps.user');
         $config['method'] = 'edit';
-        $template = 'backend.user.store';
+        $template = 'backend.user.user.store';
         return view('backend.dashboard.layout', compact(
             'template',
             'config',
@@ -121,7 +121,7 @@ class UserController extends Controller
     public function delete($id){
         $config['seo'] = config('apps.user');
         $user = $this->userRepository->findById($id);
-        $template = 'backend.user.delete';
+        $template = 'backend.user.user.delete';
         return view('backend.dashboard.layout', compact(
             'template', 
             'user',
