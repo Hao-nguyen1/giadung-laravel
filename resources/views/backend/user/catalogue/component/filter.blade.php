@@ -1,4 +1,4 @@
-<form action="{{ route('user.index') }}" method="get">
+<form action="{{ route('user.catalogue.index') }}" method="get">
     <div class="filter-wrapper">
         <div class="uk-flex uk-flex-middle uk-flex-space-between">
             <div class="perpage">
@@ -16,13 +16,12 @@
             <div class="action">
                 <div class="uk-flex uk-flex-middle">
                     @php
-                        $publishArray = ['Không hoạt động', 'Hoạt động'];
+
                         $publish = request('publish') ?: old('publish');
 
                     @endphp
                     <select name="publish" class="form-control ml10 setupSelect2">
-                        <option value="-1" selected="selected">Chọn trạng thái</option>
-                        @foreach ($publishArray as $key => $val)
+                        @foreach (config('apps.general.publish') as $key => $val)
                             <option {{ ($publish == $key) ? 'selected' : '' }} value="{{$key}}">{{$val}}</option>
 
                         @endforeach

@@ -19,6 +19,7 @@ interface BaseRepositoryInterface
         array $join = [],
         array $extend = [],
         int $perpage = 1
+        // array $relations = []
     );
     public function updateByWhereIn(string $whereInField = '', array $whereIn = [], array $payload = []);
 }

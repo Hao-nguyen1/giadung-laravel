@@ -86,7 +86,7 @@ class UserService implements UserServiceInterface
     {
         DB::beginTransaction();
         try {
-            $payload[$post['field']] = (($post['value']==1) ? 0 : 1);
+            $payload[$post['field']] = (($post['value']==1) ? 2 : 1);
             $user = $this->userRepository->update($post['modelId'], $payload);
             DB::commit();
             return true;
@@ -128,6 +128,7 @@ class UserService implements UserServiceInterface
             'phone',
             'address',
             'publish',
+            'user_catalogue_id',
         ];
     }
 }

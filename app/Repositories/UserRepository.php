@@ -24,7 +24,8 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
         array $condition = [],
         array $join = [],
         array $extend = [],
-        int $perPage = 1
+        int $perPage = 1,
+        array $relations = []
 
         ){
             
@@ -37,13 +38,13 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
 
             }
             if(isset($condition['publish']) && !empty($condition
-            ['publish'] != -1)){
+            ['publish'] != 0)){
                 $query->where('publish', $condition['publish']);
             }
             return $query;
 
 
-        });
+        })->with('user_catalogues');
         if(!empty($join)){
             $query->join($join);
         }
