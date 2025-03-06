@@ -59,19 +59,6 @@ h5 {
 .nav .open > a:focus {
   background: #fff;
 }
-/* pass */
-.form-check {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.form-check-label{
-  font-size: 12px;
-  font-weight: normal;
-}
-
-
-
 .nav.navbar-top-links > li > a:hover,
 .nav.navbar-top-links > li > a:focus {
   background-color: transparent;
