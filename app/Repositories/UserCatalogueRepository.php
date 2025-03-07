@@ -19,5 +19,6 @@ class UserCatalogueRepository extends BaseRepository implements UserCatalogueRep
     ){
         $this->model = $model;
     }
-    
+
+
 }
