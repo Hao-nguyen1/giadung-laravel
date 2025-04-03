@@ -9,8 +9,7 @@ use App\Http\Middleware\AuthenticateMiddleware;
 use App\Http\Controllers\Ajax\LocationController;
 
 use App\Http\Middleware\LoginMiddleware;
-use App\Http\Controllers\Backend\UserController; 
-use App\Http\Controllers\Backend\UserCatalogueController; 
+use App\Http\Controllers\Backend\UserController;  
 use App\Models\User;
 
 /*
@@ -56,6 +55,7 @@ Route::group(['prefix'=> 'user/catalogue'], function(){
     Route::delete('{id}/destroy', [UserCatalogueController::class, 'destroy'])->where(['id'=>'[0-9]+'])->name('user.catalogue.destroy')->middleware('admin');
 
 });
+
 
 //AJAX
 Route::get('ajax/location/getLocation', [LocationController::class, 'getLocation'])->name('ajax.location.index')->middleware('admin');

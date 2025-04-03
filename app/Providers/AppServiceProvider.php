@@ -12,6 +12,7 @@ class AppServiceProvider extends ServiceProvider
         'App\Services\Interfaces\UserServiceInterface' => 'App\Services\UserService',
         'App\Repositories\Interfaces\UserRepositoryInterface' => 'App\Repositories\UserRepository',
 
+
         'App\Services\Interfaces\UserCatalogueServiceInterface' => 'App\Services\UserCatalogueService',
         'App\Repositories\Interfaces\UserCatalogueRepositoryInterface' => 'App\Repositories\UserCatalogueRepository',
 

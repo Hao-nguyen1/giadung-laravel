@@ -19,6 +19,7 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
     ){
         $this->model = $model;
     }
+
     public function pagination(
         array $column = ['*'],
         array $condition = [],
