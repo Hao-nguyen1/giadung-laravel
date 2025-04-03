@@ -7,7 +7,6 @@ use App\Http\Controllers\Ajax\DashboardController as AjaxDashboardController;
 
 use App\Http\Middleware\AuthenticateMiddleware;
 use App\Http\Controllers\Ajax\LocationController;
-use App\Http\Controllers\Backend\LanguageController;
 
 use App\Http\Middleware\LoginMiddleware;
 use App\Http\Controllers\Backend\UserController; 
@@ -57,18 +56,6 @@ Route::group(['prefix'=> 'user/catalogue'], function(){
     Route::delete('{id}/destroy', [UserCatalogueController::class, 'destroy'])->where(['id'=>'[0-9]+'])->name('user.catalogue.destroy')->middleware('admin');
 
 });
-
-Route::group(['prefix'=> 'language'], function(){
-    Route::get('index', [LanguageController::class, 'index'])->name('language.index')->middleware('admin');
-    Route::get('create', [LanguageController::class, 'create'])->name('language.create')->middleware('admin');
-    Route::post('store', [LanguageController::class, 'store'])->name('language.store')->middleware('admin');
-    Route::get('{id}/edit', [LanguageController::class, 'edit'])->where(['id'=>'[0-9]+'])->name('language.edit')->middleware('admin');
-    Route::post('{id}/update', [LanguageController::class, 'update'])->where(['id'=>'[0-9]+'])->name('language.update')->middleware('admin');
-    Route::get('{id}/delete', [LanguageController::class, 'delete'])->where(['id'=>'[0-9]+'])->name('language.delete')->middleware('admin');
-    Route::delete('{id}/destroy', [LanguageController::class, 'destroy'])->where(['id'=>'[0-9]+'])->name('language.destroy')->middleware('admin');
-
-});
-
 
 //AJAX
 Route::get('ajax/location/getLocation', [LocationController::class, 'getLocation'])->name('ajax.location.index')->middleware('admin');

@@ -33,15 +33,20 @@ class UserController extends Controller
     {
         $users = $this->userService->paginate($request);
 
-        $config = $this->config();
-
+        $config = [
+            'js' => [
+                'backend/js/plugins/switchery/switchery.js',
+                'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js'
+            ],
+            'css' => [
+                'backend/css/plugins/switchery/switchery.css',
+                'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css'
+            ]
+        ];
         $config['seo'] = config('apps.user');
 
         $template = 'backend.user.user.index';
-        return view('backend.dashboard.layout', compact(
-            'template', 
-            'config', 
-            'users'));
+        return view('backend.dashboard.layout', compact('template', 'config', 'users'));
     }
 
     public function create(){
@@ -49,8 +54,17 @@ class UserController extends Controller
 
         $provinces = $this->provinceRepository->all();
 
-        $config = $this->config();
-
+        $config = [
+            'css' => [
+                'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css'
+            ],
+            'js' => [
+                'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js',
+                'backend/library/location.js',
+                'backend/plugin/ckfinder/ckfinder.js',
+                'backend/library/finder.js',
+            ]
+        ];
 
         $config['seo'] = config('apps.user');
         $config['method'] = 'create';
@@ -73,7 +87,17 @@ class UserController extends Controller
         $user = $this->userRepository->findById($id);
         $provinces = $this->provinceRepository->all();
 
-        $config = $this->config();
+        $config = [
+            'css' => [
+                'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css'
+            ],
+            'js' => [
+                'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js',
+                'backend/library/location.js',
+                'backend/plugin/ckfinder/ckfinder.js',
+                'backend/library/finder.js',
+            ]
+        ];
 
         $config['seo'] = config('apps.user');
         $config['method'] = 'edit';
@@ -111,20 +135,5 @@ class UserController extends Controller
             return redirect()->route('user.index')->with('success', 'Xóa bản ghi thành công');
         }
         return redirect()->route('user.index')->with('error', 'Xóa bản ghi thất bại');
-    }
-
-    private function config(){
-        return  [
-        'js' => [
-            'backend/js/plugins/switchery/switchery.js',
-            'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js',
-            'backend/plugins/ckfinder_2/ckfinder.js',
-            'backend/library/finder.js',
-        ],
-        'css' => [
-            'backend/css/plugins/switchery/switchery.css',
-            'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css'
-        ]
-    ];
     }
 }

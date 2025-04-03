@@ -3,7 +3,7 @@
 namespace App\Repositories\Interfaces;
 
 /**
- * Interface UserCatalogueServiceInterface
+ * Interface UserServiceInterface
  * @package App\Services\Interfaces
  */
 interface UserCatalogueRepositoryInterface

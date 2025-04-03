@@ -10,7 +10,7 @@
 @endif
 
 @php
-$url = ($config['method'] == 'create') ? route('user.catalogue.store') : route('user.catalogue.update', $userCatalogue->id);
+$url = ($config['method'] == 'create') ? route('user.store') : route('user.update', $userCatalogue->id);
 @endphp
 <form action="{{ $url }}" method="post" class="box" enctype="multipart/form-data">
     @csrf
@@ -31,13 +31,13 @@ $url = ($config['method'] == 'create') ? route('user.catalogue.store') : route('
                         <div class="row mb15">
                             <div class="col-lg-6">
                                 <div class="form-row">
-                                    <label for="" class="control-label text-left">Tên nhóm
+                                    <label for="email" class="control-label text-left">Tên nhóm
                                         <span class="text-danger">(*)</span>
                                     </label>
                                     <input 
                                     type="text" 
                                     name="name" 
-                                    value="{{ old('name', ($userCatalogue->name) ?? '') }}"
+                                    value="{{ old('email', ($userCatalogue->name) ?? '') }}"
                                     class="form-control"
                                     autocomplete="off"
                                     placeholder="">
@@ -45,12 +45,13 @@ $url = ($config['method'] == 'create') ? route('user.catalogue.store') : route('
                             </div> 
                             <div class="col-lg-6">
                                 <div class="form-row">
-                                    <label for="" class="control-label text-left">Ghi chú
+                                    <label for="name" class="control-label text-left">Ghi chú
+                                        <span class="text-danger">(*)</span>
                                     </label>
                                     <input 
                                     type="text" 
                                     name="description" 
-                                    value="{{ old('description', ($userCatalogue->description) ?? '') }}"
+                                    value="{{ old('name', ($userCatalogue->name) ?? '') }}"
                                     class="form-control"
                                     autocomplete="off">
                                 </div>
@@ -66,3 +67,9 @@ $url = ($config['method'] == 'create') ? route('user.catalogue.store') : route('
         </div>
     </div>
 </form>
+<script>
+    var province_id = '{{(isset($userCatalogue->province_id)) ? $userCatalogue->province_id : ''}}'
+    var district_id = '{{(isset($userCatalogue->district_id)) ? $userCatalogue->district_id : ''}}'
+    var ward_id = '{{(isset($userCatalogue->ward_id)) ? $userCatalogue->ward_id : ''}}'
+
+</script>
