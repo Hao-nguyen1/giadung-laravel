@@ -25,8 +25,6 @@ class UserService implements UserServiceInterface
     public function paginate($request)
     {
         $condition['keyword'] = addslashes($request->input('keyword'));
-        $condition['publish'] = $request->integer('publish'); // Corrected here
-
         $perPage = (int) $request->input('perpage', 20); // Default to 20 if not provided
         $users = $this->userRepository->pagination($this->paginateSelect(), $condition, [], ['path' => 'user/index'], $perPage);
 
@@ -86,7 +84,7 @@ class UserService implements UserServiceInterface
     {
         DB::beginTransaction();
         try {
-            $payload[$post['field']] = (($post['value']==1) ? 2 : 1);
+            $payload[$post['field']] = (($post['value']==1) ? 0 : 1);
             $user = $this->userRepository->update($post['modelId'], $payload);
             DB::commit();
             return true;
@@ -128,7 +126,6 @@ class UserService implements UserServiceInterface
             'phone',
             'address',
             'publish',
-            'user_catalogue_id',
         ];
     }
 }

@@ -16,11 +16,13 @@
             <div class="action">
                 <div class="uk-flex uk-flex-middle">
                     @php
+                        $publishArray = ['Không hoạt động', 'Hoạt động'];
                         $publish = request('publish') ?: old('publish');
 
                     @endphp
                     <select name="publish" class="form-control ml10 setupSelect2">
-                        @foreach (config('apps.general.publish') as $key => $val)
+                        <option value="-1" selected="selected">Chọn trạng thái</option>
+                        @foreach ($publishArray as $key => $val)
                             <option {{ ($publish == $key) ? 'selected' : '' }} value="{{$key}}">{{$val}}</option>
 
                         @endforeach

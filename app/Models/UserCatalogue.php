@@ -8,18 +8,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class UserCatalogue extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory , SoftDeletes;
 
-    protected $fillable = [
+    protected $filltable = [
         'name',
-        'description',
         'publish'
     ];
 
     protected $table = 'user_catalogues';
-
-    public function users()
-    {
-        return $this->hasMany(User::class, 'user_catalogue_id', 'id');
-    }
 }
