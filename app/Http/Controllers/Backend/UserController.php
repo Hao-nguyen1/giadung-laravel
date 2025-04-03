@@ -45,7 +45,9 @@ class UserController extends Controller
         ];
         $config['seo'] = config('apps.user');
 
-        $template = 'backend.user.index';
+
+        $template = 'backend.user.user.index';
+
         return view('backend.dashboard.layout', compact('template', 'config', 'users'));
     }
 
